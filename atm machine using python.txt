@@ -1,0 +1,45 @@
+#                                                BASIC ATM MACHINE USING PYTHON
+
+s='''
+    1.credit
+    2.debit
+    3.mini statement
+    4.exit
+'''
+# As it is a basic level project we have used only a basics so we declared a amount as '0': 
+amount=0
+name="satish"
+passwords="3548"
+while True:
+    #Reading usename and the password from the input
+    username=input("enter the username:")
+    password=input("enter the relavant password:")
+    if name==username and password==passwords:
+        while True:
+            print(s)
+            option=int(input("Enter your option:"))
+            #For crediting amount
+            if option==1:
+                credit_amount=float(input("enter the amount:"))
+                print("Amount after credit:",amount+credit_amount)
+                amount=amount+credit_amount
+            #for debiting amount
+            elif option==2:
+                if amount==0:
+                    print("your balance is zero")
+                else:
+                    debit_amount=float(input("Enter the debit amount:"))
+                    print("amount after debit:",amount-debit_amount)
+                    amount=amount-debit_amount
+            #For mini statement
+            elif option==3:
+                print(20*"-","your remaining balance",20*"-")
+                print("Amount=",15*"-",amount)
+            #for exiting
+            elif option==4:
+                break
+            else:
+                print("you entered wrong option")
+    else:
+        print("please check the password and the username correctly")
+        
